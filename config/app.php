@@ -186,6 +186,8 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -260,6 +262,8 @@ return [
         'Gravatar'    => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Html'        => Collective\Html\HtmlFacade::class,
         'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

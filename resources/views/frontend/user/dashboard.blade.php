@@ -6,7 +6,7 @@
         <div class="col-xs-12">
 
             <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('navs.frontend.dashboard') }}</div>
+                <div class="panel-heading">Selamat datang, {{ Auth::user()->name }}</div>
 
                 <div class="panel-body">
 
@@ -14,7 +14,7 @@
 
                         <div class="col-md-4 col-md-push-8">
 
-                            <ul class="media-list">
+                            {{-- <ul class="media-list">
                                 <li class="media">
                                     <div class="media-left">
                                         <img class="media-object profile-picture" src="{{ $logged_in_user->picture }}" alt="Profile picture">
@@ -36,9 +36,9 @@
                                         @endauth
                                     </div><!--media-body-->
                                 </li><!--media-->
-                            </ul><!--media-list-->
+                            </ul><!--media-list--> --}}
 
-                            <div class="panel panel-default">
+                            {{-- <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4>Sidebar Item</h4>
                                 </div><!--panel-heading-->
@@ -46,9 +46,9 @@
                                 <div class="panel-body">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
                                 </div><!--panel-body-->
-                            </div><!--panel-->
+                            </div><!--panel--> --}}
 
-                            <div class="panel panel-default">
+                            {{-- <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4>Sidebar Item</h4>
                                 </div><!--panel-heading-->
@@ -56,78 +56,99 @@
                                 <div class="panel-body">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.
                                 </div><!--panel-body-->
-                            </div><!--panel-->
+                            </div><!--panel--> --}}
                         </div><!--col-md-4-->
 
-                        <div class="col-md-8 col-md-pull-4">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4>Total Tiket Terjual</h4>
+                                        </div><!--panel-heading-->
+
+                                        <div class="panel-body">
+                                            <p style="font-size: 72px;text-align: center;">{{ $sold->count() }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4>Pendaftaran Member</h4>
+                                        </div><!--panel-heading-->
+
+                                        <div class="panel-body">
+                                            <p style="font-size: 72px;text-align: center;">{{ $member->count() }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4>Member Masuk</h4>
+                                        </div><!--panel-heading-->
+
+                                        <div class="panel-body">
+                                            <p style="font-size: 72px;text-align: center;">100</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <h4>Item</h4>
+                                            <h4>Total Penjualan Tiket Umum</h4>
                                         </div><!--panel-heading-->
 
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-xs-12-->
-                            </div><!--row-->
-
+                                            <p style="font-size: 72px;text-align: center;">Rp. {{ number_format($sold->sum('price')) }},-</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-xs-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <h4>Item</h4>
+                                            <h4>Total Penjualan Tiket Member</h4>
                                         </div><!--panel-heading-->
 
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
+                                            <p style="font-size: 72px;text-align: center;">Rp. 1.999.900,-</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-xs-12">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
-                                            <h4>Item</h4>
+                                            <h4>Total Penjualan Hari Ini</h4>
                                         </div><!--panel-heading-->
 
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
-
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>Item</h4>
-                                        </div><!--panel-heading-->
-
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
-
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>Item</h4>
-                                        </div><!--panel-heading-->
-
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non qui facilis deleniti expedita fuga ipsum numquam aperiam itaque cum maxime.</p>
-                                        </div><!--panel-body-->
-                                    </div><!--panel-->
-                                </div><!--col-md-6-->
-
-                            </div><!--row-->
-
-                        </div><!--col-md-8-->
-
-                    </div><!--row-->
+                                            <p style="font-size: 72px;text-align: center;">Rp. {{ number_format($sold->sum('price')) }},-</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div><!--panel body-->
 
@@ -137,3 +158,12 @@
 
     </div><!-- row -->
 @endsection
+
+@push('qrc')
+<script type="text/javascript">
+    $(document).ready(function() {
+        var el = kjua({text: 'hello!'});
+        document.querySelector('body').appendChild(el);
+    });
+</script>
+@endpush

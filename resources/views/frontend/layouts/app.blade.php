@@ -24,6 +24,8 @@
             {{ Html::style(mix('css/frontend.css')) }}
         @endif
 
+        <link rel="stylesheet" type="text/css" href="{{ url('css/datatables.min.css') }}">
+
         @yield('after-styles')
 
         <!-- Scripts -->
@@ -41,6 +43,9 @@
             <div class="container">
                 @include('includes.partials.messages')
                 @yield('content')
+                <div id="qq">
+                    
+                </div>
             </div><!-- container -->
         </div><!--#app-->
 
@@ -50,5 +55,7 @@
         @yield('after-scripts')
 
         @include('includes.partials.ga')
+        <script type="text/javascript" src="js/kjua.min.js"></script>
+        @stack('scripts')
     </body>
 </html>

@@ -25,7 +25,7 @@
         @endif
 
         @yield('after-styles')
-
+        <link rel="stylesheet" type="text/css" href="{{ url('css/datepicker3.css') }}">
         <!-- Html5 Shim and Respond.js IE8 support of Html5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -70,6 +70,8 @@
         <!-- JavaScripts -->
         @yield('before-scripts')
         {{ Html::script(mix('js/backend.js')) }}
+        <script type="text/javascript" src="{{ url('js/bootstrap-datepicker.js') }}"></script>
         @yield('after-scripts')
+        @stack('scripts')
     </body>
 </html>

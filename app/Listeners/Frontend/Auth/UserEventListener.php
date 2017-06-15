@@ -13,6 +13,8 @@ class UserEventListener
     public function onLoggedIn($event)
     {
         \Log::info('User Logged In: '.$event->user->full_name);
+        $event->user->updated_at = \Carbon\Carbon::now();
+        $event->user->save();
     }
 
     /**

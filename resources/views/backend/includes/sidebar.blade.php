@@ -36,6 +36,30 @@
                     <span>{{ trans('menus.backend.sidebar.dashboard') }}</span>
                 </a>
             </li>
+            <li class="{{ active_class(Active::checkUriPattern('admin/ticket-price')) }}">
+                <a href="{{ route('admin.ticket.price') }}">
+                    <i class="fa fa-ticket"></i>
+                    <span>Harga Tiket</span>
+                </a>
+            </li>
+            <li class="{{ active_class(Active::checkUriPattern('admin/ticket-price')) }}">
+                <a href="{{ route('admin.ticket.price') }}">
+                    <i class="fa fa-ticket"></i>
+                    <span>Gate History</span>
+                </a>
+            </li>
+            <li class="{{ active_class(Active::checkUriPattern('admin/ticket-price')) }}">
+                <a href="{{ route('admin.ticket.price') }}">
+                    <i class="fa fa-ticket"></i>
+                    <span>Emergency Control</span>
+                </a>
+            </li>
+            <li class="{{ active_class(Active::checkUriPattern('admin/ticket-price')) }}">
+                <a href="{{ route('admin.report') }}">
+                    <i class="fa fa-book"></i>
+                    <span>Laporan</span>
+                </a>
+            </li>
 
             <li class="header">{{ trans('menus.backend.sidebar.system') }}</li>
 
